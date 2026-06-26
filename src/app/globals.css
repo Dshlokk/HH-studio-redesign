@@ -747,3 +747,82 @@ p {
     gap: 40px;
   }
 }
+
+/* ================= Blog Post Detail Layout Styles ================= */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.post-metadata {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.meta-col {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Content Typography */
+.post-content-body {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.post-content-body h2 {
+  font-size: 1.8rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.post-content-body p {
+  margin-bottom: 25px;
+  font-size: 1.12rem;
+  line-height: 1.8;
+}
+
+.post-content-body ul, 
+.post-content-body ol {
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.post-content-body li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.post-content-body strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 576px) {
+  .post-header h1 {
+    font-size: 2.2rem !important;
+  }
+  .post-metadata {
+    gap: 15px;
+  }
+}

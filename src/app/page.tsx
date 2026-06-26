@@ -7,6 +7,7 @@ import HeroMonolith from '@/components/HeroMonolith';
 import Footer from '@/components/Footer';
 import { ArrowRight, Compass, Plus, Award, CheckCircle, BarChart3, HeartHandshake } from 'lucide-react';
 import { useState } from 'react';
+import { submitLead } from '@/app/actions';
 
 export default function Home() {
   const fadeUp = {
@@ -96,6 +97,8 @@ export default function Home() {
 
   // Contact form state
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -116,13 +119,27 @@ export default function Home() {
     });
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({ name: '', company: '', email: '', message: '', scopes: [] });
-    }, 4000);
+    setIsSubmitting(true);
+    setErrorMessage('');
+
+    try {
+      const res = await submitLead(formData);
+      if (res.success) {
+        setFormSubmitted(true);
+        setFormData({ name: '', company: '', email: '', message: '', scopes: [] });
+        setTimeout(() => {
+          setFormSubmitted(false);
+        }, 5000);
+      } else {
+        setErrorMessage(res.error || 'Failed to submit briefing. Please try again.');
+      }
+    } catch (err) {
+      setErrorMessage('A network error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -472,8 +489,14 @@ export default function Home() {
                         />
                       </div>
 
-                      <button type="submit" className="form-submit-btn" data-cursor="hover">
-                        <span>Initiate Briefing</span>
+                      {errorMessage && (
+                        <div style={{ color: '#ef4444', fontSize: '0.82rem', fontFamily: 'var(--font-mono)', border: '1px solid rgba(239, 68, 68, 0.2)', padding: '10px 15px', borderRadius: '4px', background: 'rgba(239, 68, 68, 0.02)' }}>
+                          ERROR // {errorMessage}
+                        </div>
+                      )}
+
+                      <button type="submit" className="form-submit-btn" data-cursor="hover" disabled={isSubmitting}>
+                        <span>{isSubmitting ? 'Submitting...' : 'Initiate Briefing'}</span>
                         <ArrowRight size={14} />
                       </button>
                     </div>
