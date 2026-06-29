@@ -73,24 +73,37 @@ export default function Navbar() {
             alignItems: 'center',
           }}
         >
-          {/* Brand Logo */}
           <Link 
             href="/" 
             style={{ 
-              fontFamily: 'var(--font-heading)', 
-              fontWeight: 'bold', 
-              fontSize: '1.2rem', 
-              letterSpacing: '0.1em',
               display: 'flex',
               alignItems: 'center',
-              gap: '8px',
+              gap: '10px',
               zIndex: 1010
             }}
             onClick={() => setIsMobileMenuOpen(false)}
             data-cursor="hover"
           >
-            <span>HH</span>
-            <span style={{ color: 'var(--accent)', fontWeight: '300' }}>STUDIO</span>
+            <img 
+              src="/logo.png" 
+              alt="HH Studio Logo" 
+              style={{ 
+                height: '32px', 
+                width: 'auto',
+                display: 'block'
+              }} 
+            />
+            <span style={{ 
+              fontFamily: 'var(--font-heading)', 
+              fontWeight: 'bold', 
+              fontSize: '1.1rem', 
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: 'var(--text-primary)',
+              lineHeight: 1
+            }}>
+              HH<span style={{ color: 'var(--accent)', fontWeight: '300' }}>STUDIO</span>
+            </span>
           </Link>
 
           {/* Navigation Items (PC/Desktop) */}
