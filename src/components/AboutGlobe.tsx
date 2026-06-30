@@ -1,9 +1,26 @@
 'use client';
 
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Center } from '@react-three/drei';
+import { OrbitControls, Center, Html } from '@react-three/drei';
 import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
+
+const LOCATIONS = [
+  { name: 'INDIA', lat: 12.9716, lng: 77.5946 },
+  { name: 'UAE', lat: 25.2048, lng: 55.2708 },
+  { name: 'USA', lat: 37.7749, lng: -122.4194 }
+];
+
+function latLngToVector3(lat: number, lng: number, radius: number): THREE.Vector3 {
+  const phi = (90 - lat) * (Math.PI / 180);
+  const theta = (lng + 180) * (Math.PI / 180);
+
+  const x = -(radius * Math.sin(phi) * Math.sin(theta));
+  const y = radius * Math.cos(phi);
+  const z = radius * Math.sin(phi) * Math.cos(theta);
+
+  return new THREE.Vector3(x, y, z);
+}
 
 function NetworkGlobe() {
   const groupRef = useRef<THREE.Group>(null);
@@ -108,6 +125,31 @@ function NetworkGlobe() {
           opacity={0.02} 
         />
       </mesh>
+
+      {/* E. Custom Geographic Pin Points (UAE, USA, INDIA) */}
+      {LOCATIONS.map((loc) => {
+        const pos = latLngToVector3(loc.lat, loc.lng, 1.8);
+        return (
+          <group key={loc.name} position={pos}>
+            {/* Pulsing Beacon Point */}
+            <mesh>
+              <sphereGeometry args={[0.025, 16, 16]} />
+              <meshBasicMaterial color="#00e5ff" />
+            </mesh>
+            
+            {/* Projected HTML marker */}
+            <Html distanceFactor={4} position={[0, 0.08, 0]} center>
+              <div className="globe-pin-container">
+                <div className="globe-pin-dot" />
+                <div className="globe-pin-pulse" />
+                <div className="globe-pin-label">
+                  <span>{loc.name}</span>
+                </div>
+              </div>
+            </Html>
+          </group>
+        );
+      })}
     </group>
   );
 }
@@ -155,6 +197,66 @@ export default function AboutGlobe() {
           )}
         </Canvas>
       </Suspense>
+      <style jsx global>{`
+        .globe-pin-container {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          pointer-events: none;
+        }
+
+        .globe-pin-dot {
+          width: 5px;
+          height: 5px;
+          background-color: var(--accent);
+          border-radius: 50%;
+          box-shadow: 0 0 6px var(--accent);
+          position: relative;
+          z-index: 2;
+        }
+
+        .globe-pin-pulse {
+          position: absolute;
+          width: 13px;
+          height: 13px;
+          border: 1.5px solid var(--accent);
+          border-radius: 50%;
+          animation: globe-pin-ping 1.6s infinite ease-out;
+          top: -4px;
+          left: -4px;
+          z-index: 1;
+        }
+
+        .globe-pin-label {
+          margin-top: 6px;
+          background: rgba(5, 5, 5, 0.85);
+          border: 1px solid var(--border-subtle);
+          border-left: 2px solid var(--accent);
+          padding: 2.5px 5px;
+          border-radius: 2px;
+          font-family: var(--font-sans);
+          font-size: 7px;
+          font-weight: 700;
+          color: var(--text-primary);
+          letter-spacing: 0.1em;
+          white-space: nowrap;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+          display: flex;
+          align-items: center;
+        }
+
+        @keyframes globe-pin-ping {
+          0% {
+            transform: scale(0.5);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(2.2);
+            opacity: 0;
+          }
+        }
+      `}</style>
     </div>
   );
 }
