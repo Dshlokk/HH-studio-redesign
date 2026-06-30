@@ -114,9 +114,11 @@ function NetworkGlobe() {
 
 export default function AboutGlobe() {
   const [isMounted, setIsMounted] = useState(false);
+  const [isFinePointer, setIsFinePointer] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+    setIsFinePointer(window.matchMedia('(pointer: fine)').matches);
   }, []);
 
   if (!isMounted) {
@@ -126,8 +128,8 @@ export default function AboutGlobe() {
   return (
     <div 
       style={{ width: '100%', height: '100%', position: 'relative' }}
-      data-cursor="drag"
-      data-cursor-text="DRAG GLOBE"
+      data-cursor={isFinePointer ? "drag" : undefined}
+      data-cursor-text={isFinePointer ? "DRAG GLOBE" : undefined}
     >
       <Suspense fallback={<FallbackLoader />}>
         <Canvas
@@ -143,12 +145,14 @@ export default function AboutGlobe() {
             <NetworkGlobe />
           </Center>
 
-          {/* Interactive dragging controls, locked zoom & pan */}
-          <OrbitControls 
-            enableZoom={false} 
-            enablePan={false} 
-            rotateSpeed={0.8} 
-          />
+          {/* Interactive dragging controls, locked zoom & pan (only enabled on devices with mouse pointer) */}
+          {isFinePointer && (
+            <OrbitControls 
+              enableZoom={false} 
+              enablePan={false} 
+              rotateSpeed={0.8} 
+            />
+          )}
         </Canvas>
       </Suspense>
     </div>

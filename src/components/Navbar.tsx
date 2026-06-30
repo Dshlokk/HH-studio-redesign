@@ -138,7 +138,7 @@ export default function Navbar() {
           {/* CTA: Book Call Button (PC/Desktop) */}
           <div className="header-cta">
             <Link
-              href="#book-call"
+              href="/#book-call"
               className="book-call-btn"
               data-cursor="hover"
             >
@@ -309,7 +309,7 @@ export default function Navbar() {
                 transition={{ delay: navLinks.length * 0.08, duration: 0.5 }}
               >
                 <Link
-                  href="#book-call"
+                  href="/#book-call"
                   onClick={() => setIsMobileMenuOpen(false)}
                   style={{
                     marginTop: '1.5rem',

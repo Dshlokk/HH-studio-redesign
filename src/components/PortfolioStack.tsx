@@ -114,7 +114,7 @@ export default function PortfolioStack() {
         {/* Section Header */}
         <div style={{ marginBottom: '80px', maxWidth: '600px' }}>
           <span className="mono-label">Case Studies</span>
-          <h2 style={{ fontSize: '3rem', marginTop: '1rem', marginBottom: '1.5rem' }}>
+          <h2 className="section-title-sm">
             Recent Output.
           </h2>
           <p>

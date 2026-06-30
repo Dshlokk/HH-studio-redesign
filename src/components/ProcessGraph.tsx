@@ -76,7 +76,7 @@ export default function ProcessGraph() {
         {/* Section Header */}
         <div style={{ marginBottom: '80px', maxWidth: '600px' }}>
           <span className="mono-label">Operational Protocol</span>
-          <h2 style={{ fontSize: '3rem', marginTop: '1rem', marginBottom: '1.5rem' }}>
+          <h2 className="section-title-sm">
             No Friction. Just Results.
           </h2>
           <p>

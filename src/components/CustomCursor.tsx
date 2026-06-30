@@ -8,6 +8,7 @@ export default function CustomCursor() {
   const [cursorText, setCursorText] = useState<string>('');
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [isClicking, setIsClicking] = useState<boolean>(false);
+  const [isFinePointer, setIsFinePointer] = useState<boolean>(false);
 
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
@@ -17,7 +18,24 @@ export default function CustomCursor() {
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
 
+  // Check for fine pointer on mount and window updates
   useEffect(() => {
+    const mediaQuery = window.matchMedia('(pointer: fine)');
+    setIsFinePointer(mediaQuery.matches);
+
+    const handleMediaChange = (e: MediaQueryListEvent) => {
+      setIsFinePointer(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleMediaChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isFinePointer) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -64,9 +82,9 @@ export default function CustomCursor() {
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseenter', handleMouseEnter);
     };
-  }, [mouseX, mouseY, isVisible]);
+  }, [mouseX, mouseY, isVisible, isFinePointer]);
 
-  if (!isVisible) return null;
+  if (!isFinePointer || !isVisible) return null;
 
   // Determine cursor styles based on hover state
   const variants: Record<string, any> = {

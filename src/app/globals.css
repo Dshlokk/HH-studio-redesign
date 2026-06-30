@@ -149,6 +149,40 @@ p {
   color: var(--text-secondary);
 }
 
+.section-title {
+  font-size: clamp(2.0rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.section-title-sm {
+  font-size: clamp(1.7rem, 4.2vw, 3.0rem);
+  line-height: 1.15;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+/* Prevent iOS auto-zoom on form inputs by ensuring font-size is at least 16px */
+@media (max-width: 768px) {
+  .interactive-form input[type="text"],
+  .interactive-form input[type="email"],
+  .interactive-form input[type="number"],
+  .interactive-form input[type="tel"],
+  .interactive-form textarea,
+  .interactive-form select {
+    font-size: 16px !important;
+  }
+}
+
 /* Custom helper utilities */
 .container {
   max-width: var(--container-max);

@@ -183,7 +183,7 @@ export default function Home() {
                 </motion.p>
                 
                 <motion.div className="hero-actions" variants={fadeUp}>
-                  <Link href="#contact" className="primary-hero-btn" data-cursor="hover">
+                  <Link href="#book-call" className="primary-hero-btn" data-cursor="hover">
                     <span>Start a Project</span>
                     <span className="arrow">→</span>
                   </Link>
@@ -323,7 +323,7 @@ export default function Home() {
             <div className="teaser-header" style={{ marginBottom: '40px' }}>
               <div>
                 <span className="mono-label">Capabilities</span>
-                <h2 className="teaser-title" style={{ fontSize: '3rem' }}>Integrated Systems for Market Dominance.</h2>
+                <h2 className="teaser-title section-title-sm">Integrated Systems for Market Dominance.</h2>
                 <p style={{ color: 'var(--text-secondary)', maxWidth: '580px', marginTop: '10px' }}>
                   We operate at the intersection of design, strategy, and growth — building brands that cannot be ignored in crowded digital markets.
                 </p>
@@ -374,12 +374,12 @@ export default function Home() {
         </section>
 
         {/* ================= INITIATE PROTOCOL (Contact Form Section) ================= */}
-        <section id="contact-form-section" style={{ padding: '120px 0', borderTop: '1px solid var(--border-subtle)', background: 'rgba(15,15,17,0.1)' }}>
+        <section id="book-call" style={{ padding: '120px 0', borderTop: '1px solid var(--border-subtle)', background: 'rgba(15,15,17,0.1)' }}>
           <div className="container">
             <div className="contact-section-grid">
               <div className="contact-info-col">
                 <span className="mono-label">Initiate Protocol</span>
-                <h2 style={{ fontSize: '3.5rem', marginTop: '1rem', marginBottom: '1.5rem', lineHeight: '1.1' }}>
+                <h2 className="section-title" style={{ marginTop: '1rem', marginBottom: '1.5rem', lineHeight: '1.1' }}>
                   Ready for the Next Level.
                 </h2>
                 <p style={{ color: 'var(--text-secondary)', lineHeight: '1.65', marginBottom: '30px' }}>

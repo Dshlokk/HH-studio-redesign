@@ -187,12 +187,9 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
       {/* Expanded list - Slides in on hover */}
       <div 
-        className="card-details-wrapper"
+        className={`card-details-wrapper ${isHovered ? 'expanded' : ''}`}
         style={{
-          maxHeight: isHovered ? '240px' : '0px',
-          opacity: isHovered ? 1 : 0,
           transform: 'translateZ(40px)',
-          transition: 'max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease'
         }}
       >
         <div className="card-divider" />
@@ -217,7 +214,7 @@ export default function ServicesGrid() {
         {/* Section Header */}
         <div style={{ marginBottom: '80px', maxWidth: '600px' }}>
           <span className="mono-label">Capabilities</span>
-          <h2 style={{ fontSize: '3.5rem', marginTop: '1rem', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+          <h2 className="section-title">
             Everything Your Brand Needs. Under One Roof.
           </h2>
           <p>
@@ -331,6 +328,30 @@ export default function ServicesGrid() {
           line-height: 1.6;
           color: var(--text-secondary);
           margin-bottom: 0px;
+        }
+
+        .card-details-wrapper {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+        }
+
+        /* Desktop hover expansion state */
+        @media (hover: hover) {
+          .service-card:hover .card-details-wrapper,
+          .card-details-wrapper.expanded {
+            max-height: 320px;
+            opacity: 1;
+          }
+        }
+
+        /* Always open on touch devices and mobile screens */
+        @media (hover: none), (max-width: 768px) {
+          .card-details-wrapper {
+            max-height: 350px !important;
+            opacity: 1 !important;
+          }
         }
 
         /* Hover Expansion */

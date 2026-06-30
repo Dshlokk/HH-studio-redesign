@@ -93,7 +93,7 @@ export default function TestimonialStack() {
         {/* Section Header */}
         <div style={{ marginBottom: '80px', maxWidth: '600px' }}>
           <span className="mono-label">Field Reports</span>
-          <h2 style={{ fontSize: '3rem', marginTop: '1rem', marginBottom: '1.5rem' }}>
+          <h2 className="section-title-sm">
             Validated by Industry Leaders.
           </h2>
           <p>
@@ -200,7 +200,7 @@ export default function TestimonialStack() {
           flex-direction: column;
           justify-content: space-between;
           box-shadow: 0 40px 80px rgba(0,0,0,0.5);
-          touch-action: none; /* Prevents viewport scrolling while dragging */
+          touch-action: pan-y; /* Allows vertical page scrolling but enables touch dragging */
         }
 
         .card-deco-quote {

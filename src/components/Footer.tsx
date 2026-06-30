@@ -116,7 +116,7 @@ export default function Footer() {
               <ArrowUpRight size={14} className="arrow" />
             </a>
 
-            <a href="#book-call" className="contact-card glassmorphism" data-cursor="hover">
+            <a href="/#book-call" className="contact-card glassmorphism" data-cursor="hover">
               <div className="card-left">
                 <Calendar size={16} color="var(--accent)" />
                 <span className="card-val">Schedule Discovery</span>
