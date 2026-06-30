@@ -1,6 +1,6 @@
 'use client';
 
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { OrbitControls, Center, Html } from '@react-three/drei';
 import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
@@ -24,6 +24,9 @@ function latLngToVector3(lat: number, lng: number, radius: number): THREE.Vector
 
 function NetworkGlobe() {
   const groupRef = useRef<THREE.Group>(null);
+
+  // Load the world map texture to project continents
+  const texture = useLoader(THREE.TextureLoader, '/world-map.jpg');
 
   // 1. Generate network points and connecting line vertices on mount (cached via useMemo)
   const { points, lineVertices } = useMemo(() => {
@@ -78,19 +81,37 @@ function NetworkGlobe() {
   return (
     <group ref={groupRef}>
       {/* 
-        A. Glass-like refractive shell:
-        - meshPhysicalMaterial handles real-time refraction, transmission, and thickness
+        A1. World Map Continents Layer:
+        - alphaMap uses the loaded texture to make oceans transparent and continents visible
+        - rotation={[0, Math.PI / 2, 0]} aligns Greenwich to the -z coordinate axis
+      */}
+      <mesh rotation={[0, Math.PI / 2, 0]}>
+        <sphereGeometry args={[1.76, 64, 64]} />
+        <meshBasicMaterial
+          color="#00e5ff"
+          transparent
+          opacity={0.16}
+          alphaMap={texture}
+          depthWrite={false}
+          side={THREE.DoubleSide}
+        />
+      </mesh>
+
+      {/* 
+        A2. Glass-like Refractive Shell:
+        - meshPhysicalMaterial handles real-time refraction and thickness, giving depth
       */}
       <mesh>
-        <sphereGeometry args={[1.76, 32, 32]} />
+        <sphereGeometry args={[1.78, 32, 32]} />
         <meshPhysicalMaterial
           color="#00e5ff"
           transparent
-          opacity={0.06}
-          roughness={0.12}
+          opacity={0.03}
+          roughness={0.1}
           metalness={0.1}
-          transmission={0.8} // Glass transparency
-          thickness={0.8}    // Glass refractive thickness
+          transmission={0.9}
+          thickness={0.5}
+          depthWrite={false}
         />
       </mesh>
 
@@ -98,10 +119,10 @@ function NetworkGlobe() {
       <points geometry={pointsGeometry}>
         <pointsMaterial 
           color="#00e5ff" 
-          size={0.06} 
+          size={0.038} 
           sizeAttenuation 
           transparent 
-          opacity={0.9} 
+          opacity={0.6} 
         />
       </points>
 
@@ -110,7 +131,7 @@ function NetworkGlobe() {
         <lineBasicMaterial 
           color="#00e5ff" 
           transparent 
-          opacity={0.18} 
+          opacity={0.12} 
           linewidth={0.5} 
         />
       </lineSegments>
