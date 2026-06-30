@@ -205,6 +205,7 @@ export default function AboutGlobe() {
         <Canvas
           camera={{ position: [0, 0, isMobile ? 5.2 : 4.5], fov: 45 }}
           gl={{ antialias: true, alpha: true }}
+          dpr={isMobile ? [1, 1.5] : [1, 2]}
           style={{ background: 'transparent' }}
         >
           <ambientLight intensity={0.5} />

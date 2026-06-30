@@ -87,7 +87,7 @@ export default function TestimonialStack() {
   };
 
   return (
-    <section id="testimonials" style={{ padding: '120px 0', position: 'relative' }} className="testimonials-section">
+    <section id="testimonials" style={{ padding: 'var(--section-padding) 0', position: 'relative' }} className="testimonials-section">
       <div className="container">
         
         {/* Section Header */}

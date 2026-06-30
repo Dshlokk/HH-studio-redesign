@@ -770,7 +770,11 @@ export default function Home() {
             grid-template-columns: 1fr;
           }
           .interactive-form {
-            padding: 30px;
+            padding: 24px;
+          }
+          .form-submit-btn {
+            width: 100%;
+            justify-content: center;
           }
         }
       `}</style>

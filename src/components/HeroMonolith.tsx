@@ -387,6 +387,7 @@ export default function HeroMonolith() {
         <Canvas
           camera={{ position: [0, 0, isMobile ? 6 : 5], fov: isMobile ? 48 : 42 }}
           gl={{ antialias: true, alpha: true }}
+          dpr={isMobile ? [1, 1.5] : [1, 2]}
           style={{ background: 'transparent' }}
         >
           {/* Ambient Lighting for base visibility */}

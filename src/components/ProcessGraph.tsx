@@ -70,7 +70,7 @@ export default function ProcessGraph() {
   const activeStep = PROCESS_STEPS[activeStepIndex];
 
   return (
-    <section id="process" style={{ padding: '120px 0', position: 'relative' }} className="process-section">
+    <section id="process" style={{ padding: 'var(--section-padding) 0', position: 'relative' }} className="process-section">
       <div className="container">
         
         {/* Section Header */}

@@ -113,7 +113,7 @@ export default function PortfolioStack() {
   const activeProject = activeIndex !== null ? PROJECTS[activeIndex] : null;
 
   return (
-    <section id="work" style={{ padding: '120px 0', position: 'relative' }} className="portfolio-section">
+    <section id="work" style={{ padding: 'var(--section-padding) 0', position: 'relative' }} className="portfolio-section">
       <div className="container">
         {/* Section Header */}
         <div style={{ marginBottom: '80px', maxWidth: '600px' }}>

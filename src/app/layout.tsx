@@ -5,6 +5,8 @@ import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import DynamicBackground from "@/components/DynamicBackground";
 
+import StickyMobileCTA from "@/components/StickyMobileCTA";
+
 // Modern fonts setup for a premium marketing agency aesthetic
 const inter = Inter({
   subsets: ["latin"],
@@ -39,6 +41,9 @@ export default function RootLayout({
         
         {/* Responsive, custom-interpolating spring cursor */}
         <CustomCursor />
+        
+        {/* Floating sticky CTA for mobile devices */}
+        <StickyMobileCTA />
         
         {/* Inertial scrolling frame */}
         <SmoothScroll>

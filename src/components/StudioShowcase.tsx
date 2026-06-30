@@ -84,7 +84,7 @@ export default function StudioShowcase() {
   };
 
   return (
-    <section id="showcase" style={{ padding: '120px 0', position: 'relative' }} className="showcase-section">
+    <section id="showcase" style={{ padding: 'var(--section-padding) 0', position: 'relative' }} className="showcase-section">
       <div className="container">
         
         {/* Section Header */}

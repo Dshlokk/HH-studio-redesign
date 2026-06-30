@@ -68,7 +68,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer id="contact" style={{ padding: '120px 0 60px 0', position: 'relative', overflow: 'hidden' }} className="footer-section">
+    <footer id="contact" style={{ padding: 'var(--section-padding) 0 calc(var(--section-padding) / 2) 0', position: 'relative', overflow: 'hidden' }} className="footer-section">
       {/* Subtle fading grid overlay */}
       <div className="footer-grid-fader" />
 

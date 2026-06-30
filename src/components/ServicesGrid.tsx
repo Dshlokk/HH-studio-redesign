@@ -208,7 +208,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
 export default function ServicesGrid() {
   return (
-    <section id="services" style={{ padding: '120px 0', position: 'relative' }} className="services-section">
+    <section id="services" style={{ padding: 'var(--section-padding) 0', position: 'relative' }} className="services-section">
       <div className="container">
         
         {/* Section Header */}
