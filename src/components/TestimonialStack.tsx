@@ -287,23 +287,37 @@ export default function TestimonialStack() {
         }
 
         @media (max-width: 768px) {
+          .testimonials-stack-viewport {
+            height: 480px;
+          }
           .card-deck {
             width: 100%;
-            height: 380px;
+            height: 400px;
           }
           .testimonial-card {
-            padding: 35px;
+            padding: 24px;
           }
           .quote-text {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
+            margin-top: 10px;
           }
           .author-meta {
             flex-direction: column;
             align-items: flex-start;
-            gap: 20px;
+            gap: 15px;
+            padding-top: 15px;
           }
           .technical-stamp {
             align-self: flex-start;
+          }
+        }
+        @media (max-width: 480px) {
+          .card-deck {
+            height: 430px;
+          }
+          .quote-text {
+            font-size: 0.95rem;
+            line-height: 1.5;
           }
         }
       `}</style>

@@ -90,7 +90,7 @@ export default function StudioShowcase() {
         {/* Section Header */}
         <div style={{ marginBottom: '80px', maxWidth: '600px' }}>
           <span className="mono-label">Laboratory</span>
-          <h2 style={{ fontSize: '3rem', marginTop: '1rem', marginBottom: '1.5rem' }}>
+          <h2 style={{ fontSize: 'clamp(2.0rem, 5.5vw, 3.0rem)', marginTop: '1rem', marginBottom: '1.5rem' }}>
             Studio Showcase
           </h2>
           <p>
@@ -331,6 +331,19 @@ export default function StudioShowcase() {
           text-align: left;
           white-space: pre-wrap;
           display: block;
+        }
+
+        @media (max-width: 576px) {
+          .lab-card {
+            padding: 20px;
+          }
+          .code-display {
+            padding: 12px;
+          }
+          .code-display code {
+            font-size: 0.68rem;
+            white-space: pre;
+          }
         }
 
         .lab-card-footer {

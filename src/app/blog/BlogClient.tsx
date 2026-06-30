@@ -52,7 +52,7 @@ export default function BlogClient({ initialArticles }: BlogClientProps) {
             {/* Page Header */}
             <div style={{ marginBottom: '60px', maxWidth: '600px' }}>
               <span className="mono-label">Knowledge Base</span>
-              <h1 style={{ fontSize: '4rem', marginTop: '1rem', marginBottom: '1.5rem' }}>
+              <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', marginTop: '1rem', marginBottom: '1.5rem' }}>
                 Intelligence.
               </h1>
               <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>

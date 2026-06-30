@@ -178,10 +178,17 @@ function NetworkGlobe() {
 export default function AboutGlobe() {
   const [isMounted, setIsMounted] = useState(false);
   const [isFinePointer, setIsFinePointer] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
     setIsFinePointer(window.matchMedia('(pointer: fine)').matches);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   if (!isMounted) {
@@ -196,7 +203,7 @@ export default function AboutGlobe() {
     >
       <Suspense fallback={<FallbackLoader />}>
         <Canvas
-          camera={{ position: [0, 0, 4.5], fov: 45 }}
+          camera={{ position: [0, 0, isMobile ? 5.2 : 4.5], fov: 45 }}
           gl={{ antialias: true, alpha: true }}
           style={{ background: 'transparent' }}
         >

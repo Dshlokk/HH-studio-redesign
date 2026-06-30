@@ -365,9 +365,16 @@ function SceneGrid() {
 
 export default function HeroMonolith() {
   const [isMounted, setIsMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   if (!isMounted) {
@@ -378,7 +385,7 @@ export default function HeroMonolith() {
     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
       <Suspense fallback={<FallbackLoader />}>
         <Canvas
-          camera={{ position: [0, 0, 5], fov: 42 }}
+          camera={{ position: [0, 0, isMobile ? 6 : 5], fov: isMobile ? 48 : 42 }}
           gl={{ antialias: true, alpha: true }}
           style={{ background: 'transparent' }}
         >

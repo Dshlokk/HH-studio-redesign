@@ -67,7 +67,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               <span className="mono-label" style={{ display: 'inline-block', marginBottom: '15px' }}>
                 [{post.category}]
               </span>
-              <h1 style={{ fontSize: '3.5rem', lineHeight: '1.15', marginBottom: '25px', color: 'var(--text-primary)' }}>
+              <h1 style={{ fontSize: 'clamp(2.0rem, 5vw, 3.5rem)', lineHeight: '1.15', marginBottom: '25px', color: 'var(--text-primary)' }}>
                 {post.title}
               </h1>
               

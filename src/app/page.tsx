@@ -374,7 +374,7 @@ export default function Home() {
         </section>
 
         {/* ================= INITIATE PROTOCOL (Contact Form Section) ================= */}
-        <section id="book-call" style={{ padding: '120px 0', borderTop: '1px solid var(--border-subtle)', background: 'rgba(15,15,17,0.1)' }}>
+        <section id="book-call" style={{ padding: 'var(--section-padding) 0', borderTop: '1px solid var(--border-subtle)', background: 'rgba(15,15,17,0.1)' }}>
           <div className="container">
             <div className="contact-section-grid">
               <div className="contact-info-col">
@@ -513,7 +513,7 @@ export default function Home() {
       <style jsx global>{`
         /* Intro Strip */
         .intro-strip-section {
-          padding: 100px 0;
+          padding: var(--section-padding) 0;
         }
         
         .intro-grid {
@@ -528,6 +528,18 @@ export default function Home() {
           margin-top: 15px;
           margin-bottom: 25px;
           line-height: 1.1;
+        }
+
+        @media (max-width: 768px) {
+          .intro-left h2 {
+            font-size: 2.2rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .intro-left h2 {
+            font-size: 1.8rem;
+          }
         }
 
         .intro-left p {
@@ -679,22 +691,22 @@ export default function Home() {
         }
 
         .scopes-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
           margin-top: 5px;
         }
 
         .scope-select-btn {
           background: rgba(15, 15, 17, 0.6);
           border: 1px solid var(--border-subtle);
-          padding: 10px 14px;
+          padding: 8px 12px;
           border-radius: 4px;
-          font-size: 0.78rem;
+          font-size: 0.75rem;
           color: var(--text-secondary);
           cursor: pointer;
           transition: all 0.3s;
-          text-align: left;
+          text-align: center;
         }
 
         .scope-select-btn:hover {
@@ -755,9 +767,6 @@ export default function Home() {
 
         @media (max-width: 768px) {
           .capabilities-teaser-grid {
-            grid-template-columns: 1fr;
-          }
-          .scopes-grid {
             grid-template-columns: 1fr;
           }
           .interactive-form {

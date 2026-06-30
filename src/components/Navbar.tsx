@@ -26,13 +26,17 @@ export default function Navbar() {
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
+    const lenis = (window as any).lenis;
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+      if (lenis) lenis.stop();
     } else {
       document.body.style.overflow = '';
+      if (lenis) lenis.start();
     }
     return () => {
       document.body.style.overflow = '';
+      if (lenis) lenis.start();
     };
   }, [isMobileMenuOpen]);
 
@@ -225,7 +229,7 @@ export default function Navbar() {
             color: var(--accent);
           }
 
-          @media (max-width: 991px) {
+          @media (max-width: 768px) {
             .header-cta {
               display: none !important;
             }
@@ -261,9 +265,9 @@ export default function Navbar() {
               zIndex: 999,
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
               alignItems: 'center',
-              padding: '2rem',
+              padding: '6rem 2rem 2rem 2rem',
+              overflowY: 'auto',
             }}
           >
             <div 
@@ -272,7 +276,8 @@ export default function Navbar() {
                 flexDirection: 'column', 
                 gap: '2.5rem', 
                 alignItems: 'center',
-                textAlign: 'center'
+                textAlign: 'center',
+                margin: 'auto 0'
               }}
             >
               {navLinks.map((link, index) => {

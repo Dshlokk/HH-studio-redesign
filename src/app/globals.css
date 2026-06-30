@@ -20,7 +20,27 @@
   /* Layout */
   --container-max: 1440px;
   --header-height: 80px;
+  --section-padding: 120px;
 }
+
+@media (max-width: 991px) {
+  :root {
+    --section-padding: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 40px;
+  }
+}
+
 
 /* Base resets & selections */
 * {
@@ -334,7 +354,7 @@ p {
 
 /* Teaser Portal Layout */
 .teaser-section {
-  padding: 140px 0;
+  padding: var(--section-padding) 0;
   background: var(--bg-primary);
 }
 
@@ -678,12 +698,18 @@ p {
     gap: 50px;
   }
   .globe-frame {
-    width: 320px;
-    height: 320px;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 }
 
 @media (max-width: 576px) {
+  .canvas-frame {
+    height: 300px;
+    max-width: 100%;
+  }
   .hero-title {
     font-size: 2.5rem;
   }

@@ -94,12 +94,16 @@ export default function PortfolioStack() {
   }, []);
 
   const handleFolderClick = (index: number) => {
-    setOpeningIndex(index);
-    // Simulate folder lift and realistic slide-out before showing case study
-    setTimeout(() => {
+    if (isMobile) {
       setActiveIndex(index);
-      setOpeningIndex(null);
-    }, 850);
+    } else {
+      setOpeningIndex(index);
+      // Simulate folder lift and realistic slide-out before showing case study
+      setTimeout(() => {
+        setActiveIndex(index);
+        setOpeningIndex(null);
+      }, 850);
+    }
   };
 
   const closeCaseStudy = () => {
@@ -892,6 +896,35 @@ export default function PortfolioStack() {
           .case-metadata-row {
             flex-direction: column;
             gap: 20px;
+          }
+          .case-study-top-bar {
+            height: 70px;
+            padding: 0 1rem;
+          }
+          .case-code {
+            display: none !important;
+          }
+          .close-btn span {
+            font-size: 8px;
+          }
+          .visit-btn {
+            padding: 6px 12px;
+            font-size: 8px;
+          }
+          .case-hero {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+          }
+          .case-editorial-grid {
+            margin-bottom: 60px;
+          }
+          .case-study-scroll-wrapper {
+            padding-top: 100px;
+            padding-bottom: 60px;
+          }
+          .case-gallery {
+            margin-top: 60px;
+            padding-top: 40px;
           }
         }
       `}</style>

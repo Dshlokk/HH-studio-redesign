@@ -49,7 +49,7 @@ export default function AboutPage() {
       <div style={{ paddingTop: 'calc(var(--header-height) + 40px)' }}>
         
         {/* Manifesto & 3D Network Globe */}
-        <section style={{ padding: '80px 0 40px 0', position: 'relative' }} className="about-section">
+        <section style={{ padding: 'calc(var(--section-padding) * 0.7) 0 calc(var(--section-padding) * 0.3) 0', position: 'relative' }} className="about-section">
           <div className="container">
             <div className="about-grid">
               
@@ -94,11 +94,11 @@ export default function AboutPage() {
         </section>
 
         {/* Our Values Section */}
-        <section style={{ padding: '80px 0', borderTop: '1px solid var(--border-subtle)', background: 'rgba(15,15,17,0.1)' }}>
+        <section style={{ padding: 'calc(var(--section-padding) * 0.7) 0', borderTop: '1px solid var(--border-subtle)', background: 'rgba(15,15,17,0.1)' }}>
           <div className="container">
             <div style={{ marginBottom: '60px', maxWidth: '600px' }}>
               <span className="mono-label">Core Beliefs</span>
-              <h2 style={{ fontSize: '2.5rem', marginTop: '1rem' }}>Our Values</h2>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 4.5vw, 2.5rem)', marginTop: '1rem' }}>Our Values</h2>
             </div>
             
             <div className="values-grid">
@@ -116,12 +116,12 @@ export default function AboutPage() {
         </section>
 
         {/* Why Choose Section */}
-        <section style={{ padding: '80px 0', borderTop: '1px solid var(--border-subtle)' }}>
+        <section style={{ padding: 'calc(var(--section-padding) * 0.7) 0', borderTop: '1px solid var(--border-subtle)' }}>
           <div className="container">
             <div className="why-choose-grid">
               <div style={{ maxWidth: '500px' }}>
                 <span className="mono-label">Advantage</span>
-                <h2 style={{ fontSize: '2.5rem', marginTop: '1rem', marginBottom: '1.5rem' }}>Why Choose HH Studio</h2>
+                <h2 style={{ fontSize: 'clamp(1.8rem, 4.5vw, 2.5rem)', marginTop: '1rem', marginBottom: '1.5rem' }}>Why Choose HH Studio</h2>
                 <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
                   We don&rsquo;t rely on templates or cookie-cutter solutions. We build customized, full-scale marketing systems tailored specifically to your project requirements.
                 </p>

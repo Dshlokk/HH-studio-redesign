@@ -25,6 +25,13 @@ export default function DynamicBackground() {
       targetMouse.y = e.clientY;
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches && e.touches[0]) {
+        targetMouse.x = e.touches[0].clientX;
+        targetMouse.y = e.touches[0].clientY;
+      }
+    };
+
     const handleResize = () => {
       if (!canvas) return;
       width = canvas.width = window.innerWidth;
@@ -32,6 +39,8 @@ export default function DynamicBackground() {
     };
 
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchstart', handleTouchMove, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
     window.addEventListener('resize', handleResize);
 
     // Render loop
@@ -91,9 +100,10 @@ export default function DynamicBackground() {
       ctx.fillStyle = 'rgba(134, 134, 139, 0.15)'; // Neutral grey text
       ctx.font = 'bold 9px var(--font-heading), sans-serif';
 
-      // Corner technical borders
-      const borderPadding = 30;
-      const tickLength = 15;
+      // Corner technical borders & HUD
+      const isMobileSize = width < 768;
+      const borderPadding = isMobileSize ? 15 : 30;
+      const tickLength = isMobileSize ? 8 : 15;
       
       // Top-Left corner tick
       ctx.beginPath();
@@ -123,10 +133,12 @@ export default function DynamicBackground() {
       ctx.lineTo(width - borderPadding - tickLength, height - borderPadding);
       ctx.stroke();
 
-      // Draw active coordinates under the mouse (in clean sans font)
-      const coordText = `GRID LOC [X: ${Math.round(mouse.x)} | Y: ${Math.round(mouse.y)}]`;
-      ctx.fillText(coordText, borderPadding + 10, height - borderPadding - 10);
-      ctx.fillText('HH STUDIO // CREATIVE SYSTEMS', width - borderPadding - 165, borderPadding + 20);
+      if (!isMobileSize) {
+        // Draw active coordinates under the mouse (in clean sans font)
+        const coordText = `GRID LOC [X: ${Math.round(mouse.x)} | Y: ${Math.round(mouse.y)}]`;
+        ctx.fillText(coordText, borderPadding + 10, height - borderPadding - 10);
+        ctx.fillText('HH STUDIO // CREATIVE SYSTEMS', width - borderPadding - 165, borderPadding + 20);
+      }
 
       // 5. Draw subtle grid intersections (little technical pluses)
       ctx.strokeStyle = 'rgba(0, 229, 255, 0.12)';
@@ -153,6 +165,8 @@ export default function DynamicBackground() {
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchstart', handleTouchMove);
+      window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
     };
