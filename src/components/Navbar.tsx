@@ -229,7 +229,7 @@ export default function Navbar() {
             color: var(--accent);
           }
 
-          @media (max-width: 768px) {
+          @media (max-width: 991px) {
             .header-cta {
               display: none !important;
             }

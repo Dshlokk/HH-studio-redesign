@@ -356,7 +356,7 @@ p {
 
 /* Teaser Portal Layout */
 .teaser-section {
-  padding: var(--section-padding) 0;
+  padding: 140px 0;
   background: var(--bg-primary);
 }
 
@@ -754,6 +754,9 @@ p {
     margin-top: 15px;
     width: 100%;
   }
+  .teaser-section {
+    padding: 50px 0 !important;
+  }
   .teaser-title {
     font-size: 2.2rem;
   }
@@ -771,6 +774,9 @@ p {
   }
   .canvas-frame {
     height: 220px;
+  }
+  .teaser-section {
+    padding: 35px 0 !important;
   }
   .teaser-title {
     font-size: 1.8rem;
