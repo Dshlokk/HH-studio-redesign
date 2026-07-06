@@ -6,8 +6,48 @@ import Navbar from '@/components/Navbar';
 import HeroMonolith from '@/components/HeroMonolith';
 import Footer from '@/components/Footer';
 import { ArrowRight, Compass, Plus, Award, CheckCircle, BarChart3, HeartHandshake } from 'lucide-react';
-import { useState } from 'react';
-import { submitLead } from '@/app/actions';
+import { useState, useEffect } from 'react';
+import { submitLead, getTeaserProjects } from '@/app/actions';
+
+interface TeaserProject {
+  id: string;
+  title: string;
+  category: string;
+  num: string;
+  description: string;
+  services: string;
+  outcome: string;
+}
+
+const DEFAULT_TEASER_PROJECTS: TeaserProject[] = [
+  { 
+    id: 'meridian', 
+    title: 'Meridian', 
+    category: 'Fintech', 
+    num: '01',
+    description: 'A complete technical rebrand and digital growth strategy for a challenger fintech brand. We built their positioning, messaging framework, and performance creative system from the ground up.',
+    services: 'Brand Strategy · Visual Identity · Web Design · Performance Marketing',
+    outcome: '+340% brand recognition in 6 months'
+  },
+  { 
+    id: 'forma', 
+    title: 'Forma', 
+    category: 'Wellness', 
+    num: '02',
+    description: 'A full-scale content engine and social protocol for a premium wellness brand. We engineered consistent, compounding content across platforms — turning their audience into a loyal, converting community.',
+    services: 'Content Production · Social Media · SEO · Growth Systems',
+    outcome: '3.2M organic impressions · 5× follower growth'
+  },
+  { 
+    id: 'kova', 
+    title: 'Kova', 
+    category: 'Consumer Goods', 
+    num: '03',
+    description: 'Performance creative strategy for a D2C leader. We rebuilt their ad creative system, optimized landing pages through CRO, and reduced cost per acquisition while scaling revenue across channels.',
+    services: 'Creative Campaigns · Performance Marketing · CRO',
+    outcome: '4.8× ROAS · 45% revenue growth'
+  },
+];
 
 export default function Home() {
   const fadeUp = {
@@ -32,35 +72,17 @@ export default function Home() {
     }
   };
 
-  const teaserProjects = [
-    { 
-      id: 'meridian', 
-      title: 'Meridian', 
-      category: 'Fintech', 
-      num: '01',
-      description: 'A complete technical rebrand and digital growth strategy for a challenger fintech brand. We built their positioning, messaging framework, and performance creative system from the ground up.',
-      services: 'Brand Strategy · Visual Identity · Web Design · Performance Marketing',
-      outcome: '+340% brand recognition in 6 months'
-    },
-    { 
-      id: 'forma', 
-      title: 'Forma', 
-      category: 'Wellness', 
-      num: '02',
-      description: 'A full-scale content engine and social protocol for a premium wellness brand. We engineered consistent, compounding content across platforms — turning their audience into a loyal, converting community.',
-      services: 'Content Production · Social Media · SEO · Growth Systems',
-      outcome: '3.2M organic impressions · 5× follower growth'
-    },
-    { 
-      id: 'kova', 
-      title: 'Kova', 
-      category: 'Consumer Goods', 
-      num: '03',
-      description: 'Performance creative strategy for a D2C leader. We rebuilt their ad creative system, optimized landing pages through CRO, and reduced cost per acquisition while scaling revenue across channels.',
-      services: 'Creative Campaigns · Performance Marketing · CRO',
-      outcome: '4.8× ROAS · 45% revenue growth'
-    },
-  ];
+  const [teaserProjects, setTeaserProjects] = useState<TeaserProject[]>(DEFAULT_TEASER_PROJECTS);
+
+  useEffect(() => {
+    async function loadTeasers() {
+      const data = await getTeaserProjects();
+      if (data && data.length > 0) {
+        setTeaserProjects(data);
+      }
+    }
+    loadTeasers();
+  }, []);
 
   const capabilities = [
     {

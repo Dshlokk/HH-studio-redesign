@@ -77,7 +77,12 @@ const PROJECTS: Project[] = [
   }
 ];
 
-export default function PortfolioStack() {
+interface PortfolioStackProps {
+  initialProjects?: Project[];
+}
+
+export default function PortfolioStack({ initialProjects = [] }: PortfolioStackProps) {
+  const projectsList = initialProjects.length > 0 ? initialProjects : PROJECTS;
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [openingIndex, setOpeningIndex] = useState<number | null>(null);
@@ -110,7 +115,7 @@ export default function PortfolioStack() {
     setActiveIndex(null);
   };
 
-  const activeProject = activeIndex !== null ? PROJECTS[activeIndex] : null;
+  const activeProject = activeIndex !== null ? projectsList[activeIndex] : null;
 
   return (
     <section id="work" style={{ padding: 'var(--section-padding) 0', position: 'relative' }} className="portfolio-section">
@@ -129,7 +134,7 @@ export default function PortfolioStack() {
         {/* Stack Container */}
         <div className="stack-viewport">
           <div className="folders-container">
-            {PROJECTS.map((project, index) => {
+            {projectsList.map((project, index) => {
               const isHovered = hoveredIndex === index;
               const isOpening = openingIndex === index;
               
