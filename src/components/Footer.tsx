@@ -100,10 +100,10 @@ export default function Footer() {
           <div className="footer-col">
             <span className="col-title">DIRECT CHANNELS</span>
             
-            <a href="mailto:hello@hhstudio.co" className="contact-card glassmorphism" data-cursor="hover">
+            <a href="mailto:Contact@hhmarketing.in" className="contact-card glassmorphism" data-cursor="hover">
               <div className="card-left">
                 <Mail size={16} color="var(--accent)" />
-                <span className="card-val">hello@hhstudio.co</span>
+                <span className="card-val">Contact@hhmarketing.in</span>
               </div>
               <ArrowUpRight size={14} className="arrow" />
             </a>

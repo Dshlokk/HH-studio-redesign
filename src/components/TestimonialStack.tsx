@@ -15,38 +15,24 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
-    quote: "HH Studio didn't just redesign our brand; they gave us a new lens to see our business through. The strategic rigour and creative output were unlike anything we'd experienced with any creative studio before.",
-    author: "Priya Nair",
-    role: "Co-Founder",
-    company: "Meridian"
+    quote: "HH Studio has been managing our complete 360° marketing, and the results have been outstanding. From social media and creative campaigns to branding and customer engagement, their team has handled everything professionally. Their ideas have helped us strengthen our brand and reach more customers. They're more than a creative studio, they're a growth partner.",
+    author: "Babloo Singh Sultana",
+    role: "Founder",
+    company: "Singh's Chaap, Jaipur"
   },
   {
     id: '2',
-    quote: "The systems HH Studio put in place completely transformed our lead velocity. We're scaling faster than our most optimistic projections. Our cost per lead dropped by 10× in 90 days.",
-    author: "David Chen",
-    role: "CEO",
-    company: "Vanguard"
+    quote: "Working with HH Studio for our LinkedIn marketing has been a great experience. Their team understands personal branding, creates engaging content, and maintains consistency throughout the process. We saw a noticeable improvement in our professional presence and audience engagement. I highly recommend them to anyone looking to grow their brand on LinkedIn.",
+    author: "Aryan Bhatia",
+    role: "Founder",
+    company: "Legend ADVT (LOA)"
   },
   {
     id: '3',
-    quote: "In four months our organic reach grew more than we'd achieved in three years. The content engine and SEO strategy they built is genuinely our best marketing investment to date.",
-    author: "Marcus Webb",
-    role: "Head of Brand",
-    company: "Forma"
-  },
-  {
-    id: '4',
-    quote: "Our paid performance was completely flatlining. HH Studio rebuilt the creative strategy and performance funnel from scratch, resulting in a ROAS that nearly quintupled in the first 90 days.",
-    author: "Anika Sharma",
+    quote: "HH Studio created stunning ad creatives that perfectly captured our luxury aesthetic. Their strategic approach and high-fidelity visual production took our campaigns to the next level, driving high-intent design clients to our brand. They are exceptional partners.",
+    author: "Shania Mackin",
     role: "Founder",
-    company: "Kova"
-  },
-  {
-    id: '5',
-    quote: "An absolute masterclass in brand execution. We're now universally perceived as the premium option in our category. Our pricing power has improved as a direct result of the rebrand.",
-    author: "Elena Rostova",
-    role: "CMO",
-    company: "Aura"
+    company: "Shania Mackin Interiors"
   }
 ];
 

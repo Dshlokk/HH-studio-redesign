@@ -57,6 +57,24 @@ const PROJECTS: Project[] = [
     galleryImages: [
       'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%230f0f11"/><path d="M 150,225 C 200,100 600,100 650,225 C 600,350 200,350 150,225 Z" stroke="%230055ff" stroke-width="0.5" fill="none" opacity="0.5"/><path d="M 200,225 L 600,225" stroke="%230055ff" stroke-width="0.5" opacity="0.2"/><text x="210" y="240" fill="%230055ff" font-family="monospace" font-size="10">LOA.LINKEDIN.FLOW</text></svg>'
     ]
+  },
+  {
+    id: 'shania-mackin',
+    title: 'Shania Mackin Interiors',
+    category: 'Creative Campaigns',
+    year: '2026',
+    tabLabel: 'SHANIA MACKIN // SM-03',
+    color: '#86868b',
+    overview: 'High-fidelity ad creative production and campaign assets for luxury interior design brand, Shania Mackin Interiors. We developed premium visual creatives, structured paid ad campaigns, and engineered high-converting ad layouts to attract high-value design clients.',
+    challenge: 'The high-end interior design space demands an exceptionally polished, luxury visual aesthetic. Traditional ad templates failed to reflect the brand\'s sophisticated design standards, requiring bespoke editorial layouts and motion graphics.',
+    research: 'Audited performance metrics for premium lifestyle and home decor services. Discovered that affluent buyers respond best to cinematic, gallery-style layout displays and minimal typography that emphasizes spatial volume.',
+    strategy: 'Formulated a creative campaign strategy based on portfolio-focused video ads, sophisticated typography slides, and targeted social media performance creatives.',
+    execution: 'Designed and rendered editorial ad layouts, produced short-form video content highlighting design details, and configured high-converting visual landing assets.',
+    results: 'Outstanding campaign engagement rates, a highly refined cost-per-lead for high-ticket design inquiries, and elevated brand positioning across luxury digital networks.',
+    link: 'https://www.shaniamackininteriors.com/',
+    galleryImages: [
+      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%230f0f11"/><path d="M 100,350 Q 400,50 700,350" stroke="%2386868b" stroke-width="0.5" fill="none" opacity="0.4"/><text x="410" y="100" fill="%2386868b" font-family="monospace" font-size="10">SHANIAMACKIN.CREATIVE.REF</text></svg>'
+    ]
   }
 ];
 

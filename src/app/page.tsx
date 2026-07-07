@@ -37,6 +37,15 @@ const DEFAULT_TEASER_PROJECTS: TeaserProject[] = [
     description: 'Advanced content strategy and B2B positioning for Legends Of Advertisement (LOA). We developed a high-impact LinkedIn content engine to establish corporate authority, grow executive following, and drive high-intent consulting leads.',
     services: 'B2B Thought Leadership · Content Creation · Executive Positioning',
     outcome: 'Millions of Impressions'
+  },
+  { 
+    id: 'shania-mackin', 
+    title: 'Shania Mackin Interiors', 
+    category: 'Creative Campaigns', 
+    num: '03',
+    description: 'High-fidelity ad creative production and campaign assets for luxury interior design brand, Shania Mackin Interiors. We developed premium visual creatives and structured paid ad campaigns to attract high-value design clients.',
+    services: 'Creative Campaigns · Ad Creatives · Luxury Branding',
+    outcome: 'Elevated Visual ROI'
   }
 ];
 
@@ -401,7 +410,7 @@ export default function Home() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <div style={{ fontSize: '0.85rem' }}>
                     <span style={{ color: 'var(--text-secondary)' }}>Direct Channel: </span>
-                    <a href="mailto:hello@hhstudio.co" style={{ color: 'var(--accent)' }}>hello@hhstudio.co</a>
+                    <a href="mailto:Contact@hhmarketing.in" style={{ color: 'var(--accent)' }}>Contact@hhmarketing.in</a>
                   </div>
                   <div style={{ fontSize: '0.85rem' }}>
                     <span style={{ color: 'var(--text-secondary)' }}>Direct Call / WhatsApp: </span>
