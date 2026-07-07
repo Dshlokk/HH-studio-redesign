@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ExternalLink, Calendar, Shield, Cpu, Compass } from 'lucide-react';
 
-interface Project {
+export interface Project {
   id: string;
   title: string;
   category: string;
@@ -18,61 +18,44 @@ interface Project {
   execution: string;
   results: string;
   galleryImages: string[];
+  link?: string;
 }
 
 const PROJECTS: Project[] = [
   {
-    id: 'meridian',
-    title: 'Meridian',
-    category: 'Fintech',
+    id: 'singh-chaap',
+    title: "Singh's Chaap",
+    category: '360° Marketing',
     year: '2026',
-    tabLabel: 'MERIDIAN // FT-01',
+    tabLabel: 'SINGH CHAAP // SC-01',
     color: '#00e5ff',
-    overview: 'A complete technical rebrand and digital growth strategy for a challenger fintech brand. We built their positioning, messaging framework, and performance creative system from the ground up to turn a faceless startup into a category authority.',
-    challenge: 'Turning a complex, technical fintech product into an approachable yet premium brand that immediately commands trust. The target banking audience demanded high security assurances, visual transparency, and absolute operational clarity.',
-    research: 'We audited customer skepticism in digital banking systems and analyzed visual patterns of traditional financial institutes. Discovered a lack of distinct branding and transparent data communications among competing startups.',
-    strategy: 'Engineered a clean visual identity based on cryptographic geometry and structural blue colorways, coupled with high-fidelity conversion-focused user flows and technical positioning.',
-    execution: 'Developed their landing pages using lightweight, pre-rendered components, launched targeted performance campaigns across Google and Meta, and established real-time analytics tracking systems.',
-    results: '+340% brand recognition in 6 months, turning a pre-launch startup into an established sector authority.',
+    overview: 'Comprehensive 360 degree marketing and brand scaling for the fast-growing quick service restaurant franchise, Singh\'s Chaap. We integrated creative campaigns, localized search engine dominance, and high-performance social content to drive footfall and digital ordering.',
+    challenge: 'Scaling a highly popular street food franchise into a structured national brand while preserving its authentic taste connection. The franchise needed consistent visual branding, targeted local store campaigns, and a seamless digital ordering interface.',
+    research: 'Audited regional dining habits and local search behaviors. Discovered that modern food buyers look for hygiene trust, visual appeal on social media, and frictionless online-to-offline ordering structures.',
+    strategy: 'Created an integrated 360 degree marketing roadmap combining platform-native Instagram content, localized SEO, influencer partnerships, and Google Maps optimization.',
+    execution: 'Produced high-aesthetic social media video content, deployed geo-targeted paid campaigns, and optimized their local search visibility to drive foot traffic and direct food delivery orders.',
+    results: 'Over 5M organic and paid impressions on localized campaigns, double-digit growth in walk-ins, and a significant increase in franchise inquiries.',
+    link: 'https://www.instagram.com/singhschaapindiaofficial/',
     galleryImages: [
-      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%230f0f11"/><path d="M 100,50 L 700,50 L 700,400 L 100,400 Z" stroke="%2300e5ff" stroke-width="0.5" fill="none" opacity="0.4"/><circle cx="400" cy="225" r="100" stroke="%2300e5ff" stroke-width="0.5" fill="none" stroke-dasharray="5 5"/><line x1="400" y1="50" x2="400" y2="400" stroke="%2300e5ff" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.3"/><line x1="100" y1="225" x2="700" y2="225" stroke="%2300e5ff" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.3"/><text x="410" y="240" fill="%2300e5ff" font-family="monospace" font-size="10" letter-spacing="1">MERIDIAN.RADIAL.MESH</text></svg>',
-      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%230f0f11"/><path d="M 50,50 L 750,400" stroke="%2300e5ff" stroke-width="0.5" opacity="0.3"/><path d="M 50,400 L 750,50" stroke="%2300e5ff" stroke-width="0.5" opacity="0.3"/><rect x="300" y="150" width="200" height="150" stroke="%2300e5ff" stroke-width="0.5" fill="none"/><text x="310" y="170" fill="%2300e5ff" font-family="monospace" font-size="10">FINTECH.LEDGER.REF</text></svg>'
+      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%230f0f11"/><path d="M 100,50 L 700,50 L 700,400 L 100,400 Z" stroke="%2300e5ff" stroke-width="0.5" fill="none" opacity="0.4"/><circle cx="400" cy="225" r="100" stroke="%2300e5ff" stroke-width="0.5" fill="none" stroke-dasharray="5 5"/><line x1="400" y1="50" x2="400" y2="400" stroke="%2300e5ff" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.3"/><line x1="100" y1="225" x2="700" y2="225" stroke="%2300e5ff" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.3"/><text x="410" y="240" fill="%2300e5ff" font-family="monospace" font-size="10" letter-spacing="1">SINGHCHAAP.360.MESH</text></svg>'
     ]
   },
   {
-    id: 'forma',
-    title: 'Forma',
-    category: 'Wellness',
-    year: '2025',
-    tabLabel: 'FORMA // WL-02',
-    color: '#0055ff',
-    overview: 'A full-scale content engine and social protocol for a premium wellness brand. We engineered consistent, compounding content across platforms to turn their audience into a loyal, converting community.',
-    challenge: 'Organic reach in the wellness segment was saturated with transient visual trends. The brand required a system that generates continuous, compounding audience value rather than isolated, non-converting viral hits.',
-    research: 'We tracked user engagement lifecycles across leading health platforms. Recognized that premium users convert through structured educational content and consistent, high-aesthetic micro-interactions.',
-    strategy: 'Created a content protocol based on modular media segments (video, audio, infographics) combined with a technical SEO keyword grid to capture intent-driven organic queries.',
-    execution: 'Set up a full-scale video and photography production pipeline, launched targeted community channels, and configured automated email/lead nurture workflows.',
-    results: '3.2M organic impressions and 5× follower growth, turning their audience into an active customer base.',
-    galleryImages: [
-      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%230f0f11"/><path d="M 150,225 C 200,100 600,100 650,225 C 600,350 200,350 150,225 Z" stroke="%230055ff" stroke-width="0.5" fill="none" opacity="0.5"/><path d="M 200,225 L 600,225" stroke="%230055ff" stroke-width="0.5" opacity="0.2"/><text x="210" y="240" fill="%230055ff" font-family="monospace" font-size="10">FORMA.CONTENT.FLOW</text></svg>',
-      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%230f0f11"/><rect x="100" y="100" width="600" height="250" rx="10" stroke="%230055ff" stroke-width="0.5" fill="none" opacity="0.3"/><line x1="200" y1="100" x2="200" y2="350" stroke="%230055ff" stroke-width="0.5" opacity="0.3"/><text x="110" y="120" fill="%230055ff" font-family="monospace" font-size="10">COMMUNITY.RECORDS</text></svg>'
-    ]
-  },
-  {
-    id: 'kova',
-    title: 'Kova',
-    category: 'Consumer Goods',
+    id: 'loa',
+    title: 'Legends Of Advertisement',
+    category: 'LinkedIn Content',
     year: '2026',
-    tabLabel: 'KOVA // CG-03',
-    color: '#86868b',
-    overview: 'Performance creative strategy for a D2C leader. We rebuilt their ad creative system, optimized landing pages through CRO, and reduced cost per acquisition while scaling revenue across channels.',
-    challenge: 'Paid media efficiency was deteriorating due to high competition in consumer goods. The brand\'s existing ad creatives were flatlining, requiring a new performance model that compounds ROAS.',
-    research: 'We analyzed drop-off points in the user checkout funnel and customer belief frameworks. Discovered that premium D2C buyers demanded strong product demonstration and solid social proof before checkout.',
-    strategy: 'Reconstructed the performance creative briefs to focus on high-fidelity product animations, and implemented aggressive Conversion Rate Optimization (CRO) on key landing pages.',
-    execution: 'Produced high-converting ad creative sequences, ran extensive A/B tests on landing layouts, and optimized media buying structures across paid search and social.',
-    results: '4.8× ROAS and 45% revenue growth, resulting in a substantial increase in customer retention and lifetime value.',
+    tabLabel: 'LOA // LI-02',
+    color: '#0055ff',
+    overview: 'Advanced content strategy and B2B positioning for Legends Of Advertisement (LOA). We developed a high-impact LinkedIn content engine to establish corporate authority, grow executive following, and drive high-intent consulting leads.',
+    challenge: 'Standing out in a highly competitive marketing and advertising consulting landscape on LinkedIn. The founders needed structured thought leadership content that goes beyond generic advice to demonstrate deep domain expertise.',
+    research: 'Analyzed high-performing corporate content trends and B2B engagement dynamics. Found that decision-makers respond most to authentic breakdown studies, raw campaign data, and executive-level perspectives.',
+    strategy: 'Engineered a weekly LinkedIn content framework focusing on advertising breakdowns, marketing psychology, and business growth strategies, written in a clear and compelling style.',
+    execution: 'Crafted data-backed thought leadership posts, designed premium minimal carousels, and optimized post schedules to maximize engagement and virality within the advertising industry.',
+    results: 'Substantial organic growth in executive followers, millions of impressions, and a steady stream of incoming B2B inbound leads.',
+    link: 'https://www.linkedin.com/in/aryanloa/',
     galleryImages: [
-      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%230f0f11"/><circle cx="150" cy="150" r="10" fill="%2386868b"/><circle cx="400" cy="300" r="15" fill="%2386868b"/><circle cx="650" cy="150" r="10" fill="%2386868b"/><line x1="150" y1="150" x2="400" y2="300" stroke="%2386868b" stroke-width="0.5"/><line x1="400" y1="300" x2="650" y2="150" stroke="%2386868b" stroke-width="0.5"/><text x="420" y="305" fill="%2386868b" font-family="monospace" font-size="10">KOVA.PERFORMANCE.SYSTEM</text></svg>',
-      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%230f0f11"/><path d="M 100,350 Q 400,50 700,350" stroke="%2386868b" stroke-width="0.5" fill="none" opacity="0.4"/><text x="410" y="100" fill="%2386868b" font-family="monospace" font-size="10">ACQUISITION.FUNNEL.REF</text></svg>'
+      'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%230f0f11"/><path d="M 150,225 C 200,100 600,100 650,225 C 600,350 200,350 150,225 Z" stroke="%230055ff" stroke-width="0.5" fill="none" opacity="0.5"/><path d="M 200,225 L 600,225" stroke="%230055ff" stroke-width="0.5" opacity="0.2"/><text x="210" y="240" fill="%230055ff" font-family="monospace" font-size="10">LOA.LINKEDIN.FLOW</text></svg>'
     ]
   }
 ];
@@ -258,8 +241,14 @@ export default function PortfolioStack({ initialProjects = [] }: PortfolioStackP
                 </button>
                 <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
                   <span className="case-code">{activeProject.tabLabel}</span>
-                  <a href="#contact" onClick={closeCaseStudy} className="visit-btn" data-cursor="hover">
-                    <span>LAUNCH ENGINE</span>
+                  <a 
+                    href={activeProject.link || "https://calendly.com/contact-hhmarketing/30min"} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="visit-btn" 
+                    data-cursor="hover"
+                  >
+                    <span>{activeProject.link ? "VISIT PROJECT" : "LAUNCH ENGINE"}</span>
                     <ExternalLink size={12} />
                   </a>
                 </div>

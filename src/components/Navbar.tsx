@@ -141,13 +141,15 @@ export default function Navbar() {
 
           {/* CTA: Book Call Button (PC/Desktop) */}
           <div className="header-cta">
-            <Link
-              href="/#book-call"
+            <a
+              href="https://calendly.com/contact-hhmarketing/30min"
+              target="_blank"
+              rel="noreferrer"
               className="book-call-btn"
               data-cursor="hover"
             >
               <span>Book Call</span>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Hamburger Button */}
@@ -313,8 +315,10 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: navLinks.length * 0.08, duration: 0.5 }}
               >
-                <Link
-                  href="/#book-call"
+                <a
+                  href="https://calendly.com/contact-hhmarketing/30min"
+                  target="_blank"
+                  rel="noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
                   style={{
                     marginTop: '1.5rem',
@@ -328,11 +332,13 @@ export default function Navbar() {
                     backgroundColor: 'var(--accent)',
                     padding: '14px 32px',
                     borderRadius: '4px',
-                    boxShadow: '0 0 20px rgba(0, 229, 255, 0.2)',
+                    border: 'none',
+                    textAlign: 'center',
+                    width: '100%',
                   }}
                 >
-                  Book Call
-                </Link>
+                  <span>Book Call</span>
+                </a>
               </motion.div>
             </div>
           </motion.div>

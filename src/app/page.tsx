@@ -21,32 +21,23 @@ interface TeaserProject {
 
 const DEFAULT_TEASER_PROJECTS: TeaserProject[] = [
   { 
-    id: 'meridian', 
-    title: 'Meridian', 
-    category: 'Fintech', 
+    id: 'singh-chaap', 
+    title: "Singh's Chaap", 
+    category: '360° Marketing', 
     num: '01',
-    description: 'A complete technical rebrand and digital growth strategy for a challenger fintech brand. We built their positioning, messaging framework, and performance creative system from the ground up.',
-    services: 'Brand Strategy · Visual Identity · Web Design · Performance Marketing',
-    outcome: '+340% brand recognition in 6 months'
+    description: 'Comprehensive 360 degree marketing and brand scaling for the quick service restaurant franchise, Singh\'s Chaap. We integrated creative campaigns, localized search engine dominance, and high-performance social content to drive footfall and digital ordering.',
+    services: '360° Marketing · Local SEO · Social Content · Ad Campaigns',
+    outcome: 'Over 5M Impressions'
   },
   { 
-    id: 'forma', 
-    title: 'Forma', 
-    category: 'Wellness', 
+    id: 'loa', 
+    title: 'Legends Of Advertisement', 
+    category: 'LinkedIn Content', 
     num: '02',
-    description: 'A full-scale content engine and social protocol for a premium wellness brand. We engineered consistent, compounding content across platforms to turn their audience into a loyal, converting community.',
-    services: 'Content Production · Social Media · SEO · Growth Systems',
-    outcome: '3.2M organic impressions · 5× follower growth'
-  },
-  { 
-    id: 'kova', 
-    title: 'Kova', 
-    category: 'Consumer Goods', 
-    num: '03',
-    description: 'Performance creative strategy for a D2C leader. We rebuilt their ad creative system, optimized landing pages through CRO, and reduced cost per acquisition while scaling revenue across channels.',
-    services: 'Creative Campaigns · Performance Marketing · CRO',
-    outcome: '4.8× ROAS · 45% revenue growth'
-  },
+    description: 'Advanced content strategy and B2B positioning for Legends Of Advertisement (LOA). We developed a high-impact LinkedIn content engine to establish corporate authority, grow executive following, and drive high-intent consulting leads.',
+    services: 'B2B Thought Leadership · Content Creation · Executive Positioning',
+    outcome: 'Millions of Impressions'
+  }
 ];
 
 export default function Home() {
@@ -413,8 +404,8 @@ export default function Home() {
                     <a href="mailto:hello@hhstudio.co" style={{ color: 'var(--accent)' }}>hello@hhstudio.co</a>
                   </div>
                   <div style={{ fontSize: '0.85rem' }}>
-                    <span style={{ color: 'var(--text-secondary)' }}>Fast Track: </span>
-                    <span style={{ color: 'var(--text-primary)' }}>Message via WhatsApp</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>Direct Call / WhatsApp: </span>
+                    <a href="https://wa.me/919996673101" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)' }}>+91 99966 73101</a>
                   </div>
                 </div>
               </div>

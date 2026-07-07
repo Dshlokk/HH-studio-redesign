@@ -108,21 +108,21 @@ export default function Footer() {
               <ArrowUpRight size={14} className="arrow" />
             </a>
 
-            <a href="https://wa.me/yourphone" target="_blank" rel="noreferrer" className="contact-card glassmorphism" data-cursor="hover">
+            <a href="https://wa.me/919996673101" target="_blank" rel="noreferrer" className="contact-card glassmorphism" data-cursor="hover">
               <div className="card-left">
                 <MessageSquare size={16} color="var(--accent)" />
-                <span className="card-val">Fast Track (WhatsApp)</span>
+                <span className="card-val">+91 99966 73101 (WhatsApp)</span>
               </div>
               <ArrowUpRight size={14} className="arrow" />
             </a>
 
-            <Link href="/#book-call" className="contact-card glassmorphism" data-cursor="hover">
+            <a href="https://calendly.com/contact-hhmarketing/30min" target="_blank" rel="noreferrer" className="contact-card glassmorphism" data-cursor="hover">
               <div className="card-left">
                 <Calendar size={16} color="var(--accent)" />
-                <span className="card-val">Schedule Discovery</span>
+                <span className="card-val">Book a Call (Calendly)</span>
               </div>
               <ArrowUpRight size={14} className="arrow" />
-            </Link>
+            </a>
           </div>
 
           {/* Column 2 - Services List */}
