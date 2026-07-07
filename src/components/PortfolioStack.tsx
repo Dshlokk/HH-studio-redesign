@@ -249,7 +249,7 @@ export default function PortfolioStack({ initialProjects = [] }: PortfolioStackP
             transition={{ duration: 0.5 }}
           >
             {/* Scroll Container */}
-            <div className="case-study-scroll-wrapper">
+            <div className="case-study-scroll-wrapper" data-lenis-prevent>
               
               {/* Sticky Top Bar */}
               <div className="case-study-top-bar glassmorphism">
@@ -354,14 +354,52 @@ export default function PortfolioStack({ initialProjects = [] }: PortfolioStackP
                       </ul>
                       
                       <div className="schematic-drawing">
-                        {/* Faint technical box */}
-                        <div className="wirebox">
+                        {/* Faint technical box with project links */}
+                        <div className="wirebox" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px 10px', minHeight: '120px' }}>
                           <div className="corner tl"></div>
                           <div className="corner tr"></div>
                           <div className="corner bl"></div>
                           <div className="corner br"></div>
                           <div className="dot"></div>
-                          <span className="schem-label">STRATEGY CORE</span>
+                          <span className="schem-label" style={{ marginBottom: '12px' }}>
+                            {activeProject.id === 'singh-chaap' && "INSTAGRAM DISCOVERY"}
+                            {activeProject.id === 'loa' && "LINKEDIN TARGET"}
+                            {activeProject.id === 'shania-mackin' && "WEB INTERACTION"}
+                            {!activeProject.link && "STRATEGY CORE"}
+                          </span>
+                          {activeProject.link && (
+                            <a 
+                              href={activeProject.link} 
+                              target="_blank" 
+                              rel="noreferrer" 
+                              className="wirebox-link-btn"
+                              style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                background: 'var(--accent)',
+                                color: 'var(--bg-primary)',
+                                padding: '10px 18px',
+                                borderRadius: '4px',
+                                fontFamily: 'var(--font-mono)',
+                                fontSize: '10px',
+                                fontWeight: '700',
+                                letterSpacing: '0.08em',
+                                textTransform: 'uppercase',
+                                border: 'none',
+                                cursor: 'pointer',
+                                transition: 'all 0.3s',
+                                textDecoration: 'none'
+                              }}
+                            >
+                              <span>
+                                {activeProject.id === 'singh-chaap' && "Instagram Link"}
+                                {activeProject.id === 'loa' && "LinkedIn Link"}
+                                {activeProject.id === 'shania-mackin' && "Website Link"}
+                              </span>
+                              <ExternalLink size={10} />
+                            </a>
+                          )}
                         </div>
                       </div>
                     </div>

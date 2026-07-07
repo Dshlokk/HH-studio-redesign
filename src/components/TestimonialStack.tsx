@@ -160,7 +160,7 @@ export default function TestimonialStack() {
         }
 
         .testimonials-stack-viewport {
-          height: 480px;
+          height: 520px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -170,7 +170,7 @@ export default function TestimonialStack() {
         .card-deck {
           position: relative;
           width: 650px;
-          height: 320px;
+          height: 380px;
         }
 
         /* Testimonial Card */
@@ -181,7 +181,7 @@ export default function TestimonialStack() {
           border-radius: 12px;
           border: 1px solid var(--border-subtle);
           background: rgba(15,15,17,0.85);
-          padding: 50px;
+          padding: 40px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -198,8 +198,8 @@ export default function TestimonialStack() {
 
         .quote-text {
           font-family: var(--font-sans);
-          font-size: 1.45rem;
-          line-height: 1.6;
+          font-size: 1.25rem;
+          line-height: 1.65;
           color: var(--text-primary);
           z-index: 1;
           margin-top: 15px;
@@ -274,11 +274,11 @@ export default function TestimonialStack() {
 
         @media (max-width: 768px) {
           .testimonials-stack-viewport {
-            height: 480px;
+            height: 540px;
           }
           .card-deck {
             width: 100%;
-            height: 400px;
+            height: 440px;
           }
           .testimonial-card {
             padding: 24px;
@@ -299,11 +299,11 @@ export default function TestimonialStack() {
         }
         @media (max-width: 480px) {
           .card-deck {
-            height: 430px;
+            height: 490px;
           }
           .quote-text {
-            font-size: 0.95rem;
-            line-height: 1.5;
+            font-size: 0.92rem;
+            line-height: 1.55;
           }
         }
       `}</style>
