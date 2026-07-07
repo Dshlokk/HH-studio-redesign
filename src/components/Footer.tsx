@@ -116,13 +116,13 @@ export default function Footer() {
               <ArrowUpRight size={14} className="arrow" />
             </a>
 
-            <a href="/#book-call" className="contact-card glassmorphism" data-cursor="hover">
+            <Link href="/#book-call" className="contact-card glassmorphism" data-cursor="hover">
               <div className="card-left">
                 <Calendar size={16} color="var(--accent)" />
                 <span className="card-val">Schedule Discovery</span>
               </div>
               <ArrowUpRight size={14} className="arrow" />
-            </a>
+            </Link>
           </div>
 
           {/* Column 2 - Services List */}
@@ -181,8 +181,8 @@ export default function Footer() {
             <span className="col-title">STUDIO LOCATION</span>
             <div className="studio-info-text">
               <p>HH STUDIO LABS</p>
-              <p>Creative Marketing Agency</p>
-              <p>Bangalore, India</p>
+              <p>Creative Studio</p>
+              <p>India</p>
             </div>
             
             <button onClick={handleBackToTop} className="back-top-btn" data-cursor="hover">
@@ -195,7 +195,7 @@ export default function Footer() {
         {/* Bottom meta row */}
         <div className="footer-bottom-meta">
           <div className="meta-left">
-            <span>© 2026 HH Studio. All rights reserved.</span>
+            <span>© {currentYear} HH Studio. All rights reserved.</span>
           </div>
           <div className="meta-right">
             <Globe size={10} style={{ marginRight: '6px' }} />

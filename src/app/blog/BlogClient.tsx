@@ -56,7 +56,7 @@ export default function BlogClient({ initialArticles }: BlogClientProps) {
                 Intelligence.
               </h1>
               <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
-                Actionable insights on brand strategy, SEO, performance marketing, and content — written for ambitious founders and marketing leaders.
+                Actionable insights on brand strategy, SEO, performance marketing, and content, written for ambitious founders and marketing leaders.
               </p>
             </div>
 

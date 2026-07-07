@@ -8,7 +8,9 @@ import * as THREE from 'three';
 const LOCATIONS = [
   { name: 'INDIA', lat: 12.9716, lng: 77.5946 },
   { name: 'UAE', lat: 25.2048, lng: 55.2708 },
-  { name: 'USA', lat: 37.7749, lng: -122.4194 }
+  { name: 'USA', lat: 37.7749, lng: -122.4194 },
+  { name: 'UK', lat: 51.5074, lng: -0.1278 },
+  { name: 'EUROPE', lat: 48.8566, lng: 2.3522 }
 ];
 
 function latLngToVector3(lat: number, lng: number, radius: number): THREE.Vector3 {

@@ -34,7 +34,7 @@ const DEFAULT_TEASER_PROJECTS: TeaserProject[] = [
     title: 'Forma', 
     category: 'Wellness', 
     num: '02',
-    description: 'A full-scale content engine and social protocol for a premium wellness brand. We engineered consistent, compounding content across platforms — turning their audience into a loyal, converting community.',
+    description: 'A full-scale content engine and social protocol for a premium wellness brand. We engineered consistent, compounding content across platforms to turn their audience into a loyal, converting community.',
     services: 'Content Production · Social Media · SEO · Growth Systems',
     outcome: '3.2M organic impressions · 5× follower growth'
   },
@@ -88,7 +88,7 @@ export default function Home() {
     {
       num: '01',
       title: 'Brand Engineering',
-      body: 'We build the architecture of authority. From technical brand positioning and messaging frameworks to visual identity systems — we define how your brand is perceived and remembered.'
+      body: 'We build the architecture of authority. By creating technical brand positioning, messaging frameworks, and visual identity systems, we define how your brand is perceived and remembered.'
     },
     {
       num: '02',
@@ -98,7 +98,7 @@ export default function Home() {
     {
       num: '03',
       title: 'Content & Visual Protocol',
-      body: 'Advanced content production — photography, videography, 3D animation, motion graphics, and social-first creatives that capture attention and drive action across every platform.'
+      body: 'Advanced content production including photography, videography, 3D animation, motion graphics, and social-first creatives designed to capture attention and drive action across every platform.'
     },
     {
       num: '04',
@@ -113,7 +113,7 @@ export default function Home() {
     {
       num: '06',
       title: 'Growth Systems',
-      body: 'Scalable marketing infrastructure — CRO, email automation, lead funnels, analytics dashboards — designed to automate and accelerate your market expansion.'
+      body: 'Scalable marketing infrastructure covering CRO, email automation, lead funnels, and analytics dashboards to automate and accelerate your market expansion.'
     }
   ];
 
@@ -193,7 +193,7 @@ export default function Home() {
                 }}
               >
                 <motion.span className="mono-label" variants={fadeUp}>
-                  [ Creative Marketing Agency · Bangalore, India ]
+                  [ India-Based Creative Studio ]
                 </motion.span>
                 
                 <motion.h1 className="hero-title" variants={fadeUp}>
@@ -201,7 +201,7 @@ export default function Home() {
                 </motion.h1>
                 
                 <motion.p className="hero-desc" variants={fadeUp}>
-                  We lead with content. We scale with digital. HH Studio is a full-service creative marketing agency that builds brands people remember — through data-driven strategy, high-performance content, and integrated digital systems.
+                  We lead with content and scale with digital. HH Studio is a full-service creative studio that builds brands people remember, powered by 360 degree marketing, data-driven strategy, high-performance content, and integrated digital systems.
                 </motion.p>
                 
                 <motion.div className="hero-actions" variants={fadeUp}>
@@ -244,7 +244,7 @@ export default function Home() {
                 <span className="mono-label">Who We Are</span>
                 <h2>We Create, Build & Grow Brands</h2>
                 <p>
-                  HH Studio is not another agency that sells hype. We are a strategy-first creative marketing studio delivering end-to-end digital solutions — from brand identity and content production to SEO, performance marketing, and web design. We don&rsquo;t chase vanity metrics. We build systems that compound — generating qualified leads, organic traffic, and measurable ROI for startups, SMBs, and enterprise brands alike.
+                  HH Studio is not another agency that sells hype. We are a strategy-first creative studio delivering 360 degree marketing and end-to-end digital solutions, including brand identity, content production, SEO, performance marketing, and web design. We do not chase vanity metrics; instead, we build systems that compound, generating qualified leads, organic traffic, and measurable ROI for startups, SMBs, and enterprise brands alike.
                 </p>
               </div>
               <div className="intro-right">
@@ -347,7 +347,7 @@ export default function Home() {
                 <span className="mono-label">Capabilities</span>
                 <h2 className="teaser-title section-title-sm">Integrated Systems for Market Dominance.</h2>
                 <p style={{ color: 'var(--text-secondary)', maxWidth: '580px', marginTop: '10px' }}>
-                  We operate at the intersection of design, strategy, and growth — building brands that cannot be ignored in crowded digital markets.
+                  We operate at the intersection of design, strategy, and growth to build brands that cannot be ignored in crowded digital markets.
                 </p>
               </div>
             </div>
@@ -405,7 +405,7 @@ export default function Home() {
                   Ready for the Next Level.
                 </h2>
                 <p style={{ color: 'var(--text-secondary)', lineHeight: '1.65', marginBottom: '30px' }}>
-                  Brief us on your objectives. We respond with a strategic perspective and creative roadmap — not a sales pitch. Whether you need SEO, performance marketing, branding, or a complete digital overhaul, we&rsquo;re ready.
+                  Brief us on your objectives. We respond with a strategic perspective and creative roadmap rather than a sales pitch. Whether you need SEO, performance marketing, branding, or a complete digital overhaul, we are ready.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <div style={{ fontSize: '0.85rem' }}>

@@ -6,20 +6,20 @@ import Footer from '@/components/Footer';
 import { ShieldAlert, Compass, Activity, Eye, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About HH Studio — Strategy-First Creative Marketing Agency',
-  description: 'HH Studio is a strategy-first creative marketing agency. We build brands, campaigns, content, and digital systems that create measurable impact for ambitious businesses.',
+  title: 'About HH Studio | Strategy-First Creative Studio',
+  description: 'HH Studio is a strategy-first creative studio. We build brands, campaigns, content, and digital systems that create measurable impact for ambitious businesses.',
 };
 
 export default function AboutPage() {
   const values = [
     {
       title: 'Strategy First.',
-      description: 'Every project starts with deep discovery. Market research, competitor analysis, audience mapping — we understand your business inside out before we make anything.',
+      description: 'Every project starts with deep discovery. By analyzing market research, competitor strategies, and audience profiles, we understand your business inside out before we make anything.',
       icon: <Compass size={18} color="var(--accent)" />
     },
     {
       title: 'Results Over Optics.',
-      description: 'We care about leads, conversions, and revenue — not follower counts and impressions. Every campaign, every piece of content, every design decision is tied to a measurable outcome.',
+      description: 'We focus on leads, conversions, and revenue instead of follower counts and vanity metrics. Every campaign, every piece of content, and every design decision is tied to a measurable outcome.',
       icon: <Activity size={18} color="var(--accent)" />
     },
     {
@@ -29,7 +29,7 @@ export default function AboutPage() {
     },
     {
       title: 'Built for the Long Haul.',
-      description: 'We don\'t just launch — we optimize. Our marketing systems are designed to compound over time, building momentum and delivering increasing returns.',
+      description: 'We do not just launch campaigns; we continuously optimize them. Our marketing systems are designed to compound over time, building momentum and delivering increasing returns.',
       icon: <ShieldAlert size={18} color="var(--accent)" />
     }
   ];
@@ -37,7 +37,7 @@ export default function AboutPage() {
   const whyChoosePoints = [
     'Integrated team: strategy, creative, SEO, performance, and tech all in one place',
     'Data-driven approach with transparent monthly reporting',
-    'Customized strategies — no cookie-cutter packages',
+    'Customized strategies instead of cookie-cutter packages',
     'Industry-specific expertise across B2B, D2C, healthcare, education, real estate, and more',
     'Deep creative capability: photography, video, 3D, motion, web design',
     'Proven track record of measurable ROI across 50+ projects'
@@ -58,23 +58,23 @@ export default function AboutPage() {
                 <span className="mono-label">[ STUDIO MATRIX ]</span>
                 <h2 className="about-title">We&rsquo;re Not a Regular Agency.</h2>
                 <p className="manifesto-text" style={{ fontSize: '1.25rem', fontWeight: '500', color: 'var(--text-primary)', marginBottom: '20px' }}>
-                  We&rsquo;re a creative marketing studio that thinks like strategists and executes like marketers.
+                  We&rsquo;re a creative studio specializing in 360 degree marketing that thinks like strategists and executes like marketers.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', color: 'var(--text-secondary)', lineHeight: '1.65' }}>
                   <p>
-                    HH Studio was founded by creators who believe that content isn&rsquo;t an afterthought — it&rsquo;s the strategy. We combine the rigour of data-driven digital marketing with the craft of premium creative production to build brands that stand out, rank higher, and grow faster.
+                    HH Studio was founded by creators who believe that content is not an afterthought; it is the entire strategy. We combine the rigour of data-driven digital marketing with the craft of premium creative production to build brands that stand out, rank higher, and grow faster.
                   </p>
                   <p>
-                    We are a full-service creative marketing agency serving ambitious startups, growing SMBs, and established enterprise brands. Our integrated team covers brand strategy, SEO, performance marketing, content production, web design, and social media — everything your brand needs to dominate your market, under one roof.
+                    We are an India-based creative studio serving ambitious startups, growing SMBs, and established enterprise brands. Our integrated team delivers 360 degree marketing by covering brand strategy, SEO, performance marketing, content production, web design, and social media, providing everything your brand needs to dominate your market under one roof.
                   </p>
                   <p>
-                    We don&rsquo;t chase vanity metrics. We don&rsquo;t over-promise and under-deliver. We build honest, transparent partnerships with our clients — and we measure our success entirely by theirs.
+                    We do not chase vanity metrics, nor do we over-promise and under-deliver. We build honest, transparent partnerships with our clients, measuring our success entirely by theirs.
                   </p>
                 </div>
                 
                 <div className="architectural-sign-off" style={{ marginTop: '40px' }}>
                   <div className="crosshair"></div>
-                  <span>BANGALORE // INCEPTION</span>
+                  <span>INDIA // INCEPTION</span>
                 </div>
               </div>
 

@@ -22,7 +22,7 @@ const PROCESS_STEPS: ProcessStep[] = [
     name: 'Discover',
     subtitle: 'SYSTEM INTEL',
     icon: <FileSearch size={18} />,
-    description: 'We go deep before we make anything. Market research, competitor analysis, audience mapping, and keyword intelligence — the foundation everything else stands on.',
+    description: 'We go deep before we make anything. Market research, competitor analysis, audience mapping, and keyword intelligence establish the foundation everything else stands on.',
     deliverables: ['Market Research', 'Competitor Analysis', 'Audience Mapping', 'Keyword Intelligence'],
     metrics: 'METRICS: MARKET_RESEARCH // CONFIDENCE: 98.4%'
   },
@@ -40,7 +40,7 @@ const PROCESS_STEPS: ProcessStep[] = [
     name: 'Create',
     subtitle: 'PRODUCTION INTERACTION',
     icon: <Layers size={18} />,
-    description: 'Strategy becomes reality. Design, copy, content, code — all built in tight iteration cycles with your team. Not a black-box handoff, but a true creative partnership.',
+    description: 'Strategy becomes reality. Design, copy, content, and code are all built in tight iteration cycles with your team, offering a true creative partnership instead of a black-box handoff.',
     deliverables: ['Custom Brand Design', 'Copywriting & Content Assets', 'NextJS Front-End Prototypes', 'Creative Campaign Assets'],
     metrics: 'SYSTEM: BRAND_SYSTEMS // ACCESSIBILITY: WCAG_AA'
   },
@@ -58,7 +58,7 @@ const PROCESS_STEPS: ProcessStep[] = [
     name: 'Optimize',
     subtitle: 'TELEMETRY CYCLE',
     icon: <Activity size={18} />,
-    description: 'Launch is the beginning. We monitor performance, run A/B experiments, refine ad creative, and iterate on what the data tells us — compounding results over time.',
+    description: 'Launch is the beginning. We monitor performance, run A/B experiments, refine ad creative, and iterate on what the data tells us to compound results over time.',
     deliverables: ['Performance Dashboards', 'A/B Experiment Runs', 'Ad Creative Refinement', 'Compounding ROI Reports'],
     metrics: 'GROWTH: A/B_TEST_RATE // COMPACTION: +48%'
   }
@@ -154,7 +154,7 @@ export default function ProcessGraph() {
                 {/* Left column - Description */}
                 <div className="details-summary-col">
                   <span className="mono-label">{activeStep.subtitle}</span>
-                  <h3 className="details-title">Phase 0{activeStepIndex + 1} // {activeStep.name}</h3>
+                  <h3 className="details-title">Phase 0{activeStepIndex + 1} {"//"} {activeStep.name}</h3>
                   <p className="details-desc">{activeStep.description}</p>
                   
                   <div className="technical-metric">

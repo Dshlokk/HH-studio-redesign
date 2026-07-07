@@ -7,7 +7,7 @@ import DynamicBackground from "@/components/DynamicBackground";
 
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
-// Modern fonts setup for a premium marketing agency aesthetic
+// Modern fonts setup for a premium creative studio aesthetic
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -21,8 +21,8 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "HH Studio — Creative Marketing Agency | Brand Strategy, SEO & Performance Marketing",
-  description: "HH Studio is a full-service creative marketing agency offering brand strategy, SEO, performance marketing, content production, and web design. Strategy-first. ROI-driven. Get started today.",
+  title: "HH Studio | Creative Studio | Brand Strategy, SEO & Performance Marketing",
+  description: "HH Studio is a strategy-first creative studio offering brand strategy, SEO, performance marketing, content production, and web design. Drive measurable growth today.",
 };
 
 export default function RootLayout({

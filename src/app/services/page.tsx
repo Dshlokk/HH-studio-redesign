@@ -4,8 +4,8 @@ import ServicesGrid from '@/components/ServicesGrid';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Marketing Services — Brand, SEO, Performance, Content & Web | HH Studio',
-  description: 'Explore HH Studio\'s full suite of marketing services — branding, SEO, Google & Meta Ads, social media, content production, web design, and growth systems. Measurable results guaranteed.',
+  title: '360 Degree Marketing & Creative Services | HH Studio',
+  description: 'Explore HH Studio\'s comprehensive suite of 360 degree marketing services, including branding, SEO, Google and Meta Ads, social media, content production, web design, and growth systems with guaranteed results.',
 };
 
 export default function ServicesPage() {

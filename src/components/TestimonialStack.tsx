@@ -15,7 +15,7 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
-    quote: "HH Studio didn't just redesign our brand — they gave us a new lens to see our business through. The strategic rigour and creative output were unlike anything we'd experienced with any digital marketing agency before.",
+    quote: "HH Studio didn't just redesign our brand; they gave us a new lens to see our business through. The strategic rigour and creative output were unlike anything we'd experienced with any creative studio before.",
     author: "Priya Nair",
     role: "Co-Founder",
     company: "Meridian"
@@ -36,7 +36,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: '4',
-    quote: "Our paid performance was completely flatlining. HH Studio rebuilt the creative strategy and performance funnel from scratch — ROAS nearly quintupled in the first 90 days.",
+    quote: "Our paid performance was completely flatlining. HH Studio rebuilt the creative strategy and performance funnel from scratch, resulting in a ROAS that nearly quintupled in the first 90 days.",
     author: "Anika Sharma",
     role: "Founder",
     company: "Kova"
@@ -147,7 +147,7 @@ export default function TestimonialStack() {
                   <div className="author-meta">
                     <div className="name-title">
                       <span className="author-name">{item.author}</span>
-                      <span className="author-role">{item.role} // <span className="accent-text">{item.company}</span></span>
+                      <span className="author-role">{item.role} {"//"} <span className="accent-text">{item.company}</span></span>
                     </div>
                     
                     <div className="technical-stamp">

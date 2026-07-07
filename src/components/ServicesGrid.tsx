@@ -22,7 +22,7 @@ const SERVICES: Service[] = [
     title: 'Brand Engineering',
     icon: <Layers size={20} strokeWidth={1.5} />,
     tag: 'BRAND STRATEGY & IDENTITY',
-    summary: 'We build the architecture of authority. From technical brand positioning and messaging frameworks to visual identity systems — we define how your brand is perceived and remembered.',
+    summary: 'We build the architecture of authority. By crafting technical brand positioning, messaging frameworks, and visual identity systems, we define how your brand is perceived and remembered.',
     details: [
       'Brand Positioning & Messaging Framework',
       'Visual Identity System (Logo, Typography, Color)',
@@ -37,7 +37,7 @@ const SERVICES: Service[] = [
     title: 'Search Engine Optimization',
     icon: <Target size={20} strokeWidth={1.5} />,
     tag: 'SEO & ORGANIC GROWTH',
-    summary: 'Tired of being invisible on Google? We get you to Page 1 — and keep you there. Technical SEO, content strategy, and link building that drive sustainable organic traffic and qualified leads.',
+    summary: 'Tired of being invisible on Google? We get you to Page 1 and keep you there through technical SEO, content strategy, and link building that drive sustainable organic traffic and qualified leads.',
     details: [
       'Technical SEO & Site Audits',
       'On-Page & Content SEO',
@@ -53,7 +53,7 @@ const SERVICES: Service[] = [
     title: 'Performance Marketing',
     icon: <Radio size={20} strokeWidth={1.5} />,
     tag: 'PAID ACQUISITION',
-    summary: 'We don\'t just run ads — we build revenue-generating machines. From Google Ads and Meta Ads to LinkedIn and YouTube campaigns, our performance marketing is laser-focused on CPL and ROAS.',
+    summary: 'We do not just run ads; we build revenue-generating systems. As part of our 360 degree marketing, our performance marketing covers Google, Meta, LinkedIn, and YouTube, focusing entirely on CPL and ROAS.',
     details: [
       'Google Ads & YouTube Campaigns',
       'Meta Ads (Facebook & Instagram)',
@@ -84,7 +84,7 @@ const SERVICES: Service[] = [
     title: 'Content & Visual Protocol',
     icon: <Film size={20} strokeWidth={1.5} />,
     tag: 'CREATIVE PRODUCTION',
-    summary: 'Content is the engine of every great brand. We produce high-quality, platform-native content that captures attention, builds trust, and drives action — from brand films to 3D CGI animations.',
+    summary: 'Content is the engine of every great brand. We produce high-quality, platform-native content that captures attention, builds trust, and drives action, ranging from brand films to 3D CGI animations.',
     details: [
       'Photography (Product, Corporate, Lifestyle)',
       'Videography (Brand Films, Reels, Testimonials)',
@@ -218,7 +218,7 @@ export default function ServicesGrid() {
             Everything Your Brand Needs. Under One Roof.
           </h2>
           <p>
-            We operate at the intersection of design, strategy, and growth — building brands that cannot be ignored in crowded digital markets.
+            We operate at the intersection of design, strategy, and growth to build brands that cannot be ignored in crowded digital markets.
           </p>
         </div>
 
