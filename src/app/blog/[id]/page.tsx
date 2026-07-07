@@ -14,30 +14,43 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
-  const rows = await sql`SELECT title, excerpt FROM "blogPost" WHERE id = ${id}`;
-  if (!rows || rows.length === 0) {
+  try {
+    const rows = await sql`SELECT title, excerpt FROM "blogPost" WHERE id = ${id}`;
+    if (!rows || rows.length === 0) {
+      return {
+        title: 'Post Not Found | HH Studio',
+      };
+    }
+    const post = rows[0];
     return {
-      title: 'Post Not Found | HH Studio',
+      title: `${post.title} | HH Studio Blog`,
+      description: post.excerpt,
+    };
+  } catch (error) {
+    return {
+      title: 'Blog | HH Studio',
     };
   }
-  const post = rows[0];
-  return {
-    title: `${post.title} | HH Studio Blog`,
-    description: post.excerpt,
-  };
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { id } = await params;
   
-  // Fetch post details from Neon
-  const rows = await sql`SELECT * FROM "blogPost" WHERE id = ${id}`;
+  let post: any = null;
   
-  if (!rows || rows.length === 0) {
-    notFound();
+  try {
+    // Fetch post details from Neon
+    const rows = await sql`SELECT * FROM "blogPost" WHERE id = ${id}`;
+    if (rows && rows.length > 0) {
+      post = rows[0];
+    }
+  } catch (error) {
+    console.error('Failed to fetch blog post details:', error);
   }
   
-  const post = rows[0];
+  if (!post) {
+    notFound();
+  }
   const pubDate = post.publishedat || post.createdat;
   const dateStr = pubDate 
     ? new Date(pubDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })

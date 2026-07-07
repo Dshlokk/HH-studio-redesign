@@ -3,7 +3,7 @@ import { neon } from '@neondatabase/serverless';
 const databaseUrl = process.env.DATABASE_URL;
 
 if (!databaseUrl) {
-  throw new Error('DATABASE_URL environment variable is missing');
+  console.warn('Warning: DATABASE_URL environment variable is missing. Database queries will fall back.');
 }
 
-export const sql = neon(databaseUrl);
+export const sql = databaseUrl ? neon(databaseUrl) : (async () => []) as any;
