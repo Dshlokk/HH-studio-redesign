@@ -44,7 +44,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: 'loa',
-    title: 'Legends Of Advertisement',
+    title: 'Legends Outdoor Advertisement',
     category: 'LinkedIn Content',
     year: '2026',
     tabLabel: 'LOA // LI-02',
