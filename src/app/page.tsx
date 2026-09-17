@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import HeroMonolith from '@/components/HeroMonolith';
+import VideoSection from '@/components/VideoSection';
 import Footer from '@/components/Footer';
 import { ArrowRight, Compass, Plus, Award, CheckCircle, BarChart3, HeartHandshake } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -30,10 +31,28 @@ const DEFAULT_TEASER_PROJECTS: TeaserProject[] = [
     outcome: 'Over 5M Impressions'
   },
   { 
+    id: 'o2-realty', 
+    title: 'O2 Realty Consultants', 
+    category: 'Video Production', 
+    num: '02',
+    description: 'High-production cinematic video production and brand milestone storytelling for premier property consultants, O2 Realty. We direct and produce high-fidelity video campaigns and vertical reels that turn property viewers into qualified investors.',
+    services: 'Cinematic Video Production · Brand Milestone Films · Drone Cinematography · Reel Direction',
+    outcome: 'High Retention & Inquiries'
+  },
+  { 
+    id: 'harith-rasoi', 
+    title: 'Harith Rasoi', 
+    category: 'Social Media', 
+    num: '03',
+    description: 'Complete social media strategy, culinary video production, and high-engagement community management for Harith Rasoi. We manage their digital presence end-to-end, producing viral food reels, mouth-watering visuals, and localized community campaigns.',
+    services: 'Social Media Management · Food Reel Production · Community Growth · Content Strategy',
+    outcome: 'Viral Reach & Local Footfall'
+  },
+  { 
     id: 'loa', 
     title: 'Legends Of Advertisement', 
     category: 'LinkedIn Content', 
-    num: '02',
+    num: '04',
     description: 'Advanced content strategy and B2B positioning for Legends Of Advertisement (LOA). We developed a high-impact LinkedIn content engine to establish corporate authority, grow executive following, and drive high-intent consulting leads.',
     services: 'B2B Thought Leadership · Content Creation · Executive Positioning',
     outcome: 'Millions of Impressions'
@@ -42,7 +61,7 @@ const DEFAULT_TEASER_PROJECTS: TeaserProject[] = [
     id: 'shania-mackin', 
     title: 'Shania Mackin Interiors', 
     category: 'Creative Campaigns', 
-    num: '03',
+    num: '05',
     description: 'High-fidelity ad creative production and campaign assets for luxury interior design brand, Shania Mackin Interiors. We developed premium visual creatives and structured paid ad campaigns to attract high-value design clients.',
     services: 'Creative Campaigns · Ad Creatives · Luxury Branding',
     outcome: 'Elevated Visual ROI'
@@ -282,6 +301,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* ================= CINEMATIC VIDEO PRODUCTION SECTION ================= */}
+        <VideoSection />
 
         {/* ================= PORTFOLIO TEASER PORTAL ================= */}
         <section className="teaser-section" style={{ borderTop: '1px solid var(--border-subtle)' }}>

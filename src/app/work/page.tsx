@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import PortfolioStack, { Project } from '@/components/PortfolioStack';
+import VideoSection from '@/components/VideoSection';
 import Footer from '@/components/Footer';
 import { sql } from '@/lib/db';
 
@@ -118,6 +119,7 @@ export default async function WorkPage() {
       <Navbar />
       <div style={{ paddingTop: 'calc(var(--header-height) + 40px)' }}>
         <PortfolioStack initialProjects={initialProjects} />
+        <VideoSection />
       </div>
       <Footer />
     </>

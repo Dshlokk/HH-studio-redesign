@@ -57,7 +57,7 @@ export async function getTeaserProjects() {
       SELECT id, title, description, category, tags, featured, link, createdat
       FROM "portfolio"
       ORDER BY createdat DESC
-      LIMIT 3
+      LIMIT 6
     `;
     
     if (!rows || rows.length === 0) {
